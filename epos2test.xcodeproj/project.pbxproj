@@ -11,6 +11,12 @@
 		8B50BCE92991FC7700885927 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B50BCE82991FC7700885927 /* ContentView.swift */; };
 		8B50BCEB2991FC7A00885927 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B50BCEA2991FC7A00885927 /* Assets.xcassets */; };
 		8B50BCEE2991FC7A00885927 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B50BCED2991FC7A00885927 /* Preview Assets.xcassets */; };
+		8B50BCF52991FE5800885927 /* libepos2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B50BCF42991FE5800885927 /* libepos2.xcframework */; };
+		8B50BCF72991FEAA00885927 /* libeposeasyselect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B50BCF62991FEA900885927 /* libeposeasyselect.xcframework */; };
+		8B50BCFA2992000500885927 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B50BCF92992000500885927 /* libxml2.2.tbd */; };
+		8B50BCFC2992002300885927 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B50BCFB2992002300885927 /* ExternalAccessory.framework */; };
+		8B50BCFE2992003C00885927 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B50BCFD2992003C00885927 /* CoreBluetooth.framework */; };
+		8B50BD0129920C5A00885927 /* epos2_header.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B50BD0029920C5A00885927 /* epos2_header.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,14 @@
 		8B50BCE82991FC7700885927 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8B50BCEA2991FC7A00885927 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B50BCED2991FC7A00885927 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8B50BCF42991FE5800885927 /* libepos2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libepos2.xcframework; path = ../../Downloads/ePOS_SDK_iOS_v2.22.0/libepos2.xcframework; sourceTree = "<group>"; };
+		8B50BCF62991FEA900885927 /* libeposeasyselect.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libeposeasyselect.xcframework; path = ../../Downloads/ePOS_SDK_iOS_v2.22.0/libeposeasyselect.xcframework; sourceTree = "<group>"; };
+		8B50BCF92992000500885927 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		8B50BCFB2992002300885927 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		8B50BCFD2992003C00885927 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		8B50BCFF29920C5A00885927 /* epos2test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "epos2test-Bridging-Header.h"; sourceTree = "<group>"; };
+		8B50BD0029920C5A00885927 /* epos2_header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = epos2_header.m; sourceTree = "<group>"; };
+		8B50BD0229920F9D00885927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +40,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B50BCFE2992003C00885927 /* CoreBluetooth.framework in Frameworks */,
+				8B50BCFC2992002300885927 /* ExternalAccessory.framework in Frameworks */,
+				8B50BCFA2992000500885927 /* libxml2.2.tbd in Frameworks */,
+				8B50BCF72991FEAA00885927 /* libeposeasyselect.xcframework in Frameworks */,
+				8B50BCF52991FE5800885927 /* libepos2.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,8 +54,11 @@
 		8B50BCDA2991FC7700885927 = {
 			isa = PBXGroup;
 			children = (
+				8B50BCF42991FE5800885927 /* libepos2.xcframework */,
+				8B50BCF62991FEA900885927 /* libeposeasyselect.xcframework */,
 				8B50BCE52991FC7700885927 /* epos2test */,
 				8B50BCE42991FC7700885927 /* Products */,
+				8B50BCF82992000500885927 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +73,13 @@
 		8B50BCE52991FC7700885927 /* epos2test */ = {
 			isa = PBXGroup;
 			children = (
+				8B50BD0229920F9D00885927 /* Info.plist */,
 				8B50BCE62991FC7700885927 /* epos2testApp.swift */,
 				8B50BCE82991FC7700885927 /* ContentView.swift */,
+				8B50BD0029920C5A00885927 /* epos2_header.m */,
 				8B50BCEA2991FC7A00885927 /* Assets.xcassets */,
 				8B50BCEC2991FC7A00885927 /* Preview Content */,
+				8B50BCFF29920C5A00885927 /* epos2test-Bridging-Header.h */,
 			);
 			path = epos2test;
 			sourceTree = "<group>";
@@ -65,6 +90,16 @@
 				8B50BCED2991FC7A00885927 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8B50BCF82992000500885927 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B50BCFD2992003C00885927 /* CoreBluetooth.framework */,
+				8B50BCFB2992002300885927 /* ExternalAccessory.framework */,
+				8B50BCF92992000500885927 /* libxml2.2.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +134,7 @@
 				TargetAttributes = {
 					8B50BCE22991FC7700885927 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -138,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B50BCE92991FC7700885927 /* ContentView.swift in Sources */,
+				8B50BD0129920C5A00885927 /* epos2_header.m in Sources */,
 				8B50BCE72991FC7700885927 /* epos2testApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,17 +301,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"epos2test/Preview Content\"";
 				DEVELOPMENT_TEAM = 4LB65X9AVQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = epos2test/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use this to communicate with the printer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -283,6 +324,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dream.shirokawa.epos2test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "epos2test/epos2test-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -293,17 +336,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"epos2test/Preview Content\"";
 				DEVELOPMENT_TEAM = 4LB65X9AVQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = epos2test/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use this to communicate with the printer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +359,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dream.shirokawa.epos2test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "epos2test/epos2test-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
