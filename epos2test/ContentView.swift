@@ -18,12 +18,24 @@ struct ContentView: View {
     private var Printername = "TM-m30_008053"
     @State var BDAddress:String = "BT:00:01:90:77:A6:65"
     
+    private let printerDescovery = EposPrinterDescovery()
+    
     var body: some View {
         VStack {
             TextField("ブルートゥースアドレス", text: $BDAddress)
             
             Button("印刷"){
                 SimplePrint()
+            }
+            .font(Font.largeTitle)
+            
+            Button("Bluetoothデバイス検索開始"){
+                printerDescovery.start()
+            }
+            .font(Font.largeTitle)
+            
+            Button("Bluetoothデバイス検索停止"){
+                printerDescovery.stop()
             }
             .font(Font.largeTitle)
         }
@@ -172,6 +184,35 @@ struct ContentView: View {
         }
         
         return true
+    }
+}
+
+extension ContentView {
+    class EposPrinterDescovery: NSObject, Epos2DiscoveryDelegate {
+        func start() {
+            let filterOpt = Epos2FilterOption()
+            filterOpt.portType = EPOS2_PORTTYPE_BLUETOOTH.rawValue
+            filterOpt.deviceModel = EPOS2_MODEL_ALL.rawValue
+            filterOpt.deviceType = EPOS2_TYPE_ALL.rawValue
+            let result = Epos2Discovery.start(filterOpt, delegate: self)
+            if result != EPOS2_SUCCESS.rawValue {
+                print("Epos2Discovery start error. result=\(result)")
+            }
+        }
+        
+        func stop() {
+            Epos2Discovery.stop()
+        }
+        
+        internal func onDiscovery(_ deviceInfo: Epos2DeviceInfo!) {
+            print("Device found: -------------------------")
+            print("Target: \(String(describing: deviceInfo.target))")
+            print("Device name: \(String(describing: deviceInfo.deviceName))")
+            print("MAC address: \(String(describing: deviceInfo.macAddress))")
+            print("IP address: \(String(describing: deviceInfo.ipAddress))")
+            print("BD address: \(String(describing: deviceInfo.bdAddress))")
+            print("BD LE address: \(String(describing: deviceInfo.leBdAddress))")
+        }
     }
 }
 
